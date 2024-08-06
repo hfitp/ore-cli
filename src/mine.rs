@@ -46,10 +46,11 @@ impl Miner {
             // Calc cutoff time
             let cutoff_time = self.get_cutoff(proof, args.buffer_time).await + random_additional_time;
             println!(
-                "\cutoff_time: {} \n  min_difficulty: {}",
+                "cutoff_time: {}\nmin_difficulty: {}",
                 cutoff_time,
                 config.min_difficulty
             );
+
 
             // Run drillx
             let solution = Self::find_hash_par(
