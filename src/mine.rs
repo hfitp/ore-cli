@@ -46,7 +46,7 @@ impl Miner {
             // Calc cutoff time
             let cutoff_time = self.get_cutoff(proof, args.buffer_time).await + random_additional_time;
             println!(
-                "cutoff_time: {}\nmin_difficulty: {}",
+                "cutoff_time: {} min_difficulty: {}",
                 cutoff_time,
                 config.min_difficulty
             );
@@ -57,7 +57,7 @@ impl Miner {
                 proof,
                 cutoff_time,
                 args.threads,
-                (config.min_difficulty  + 12) as u32, // 将最小难度提高一倍并加上3
+                (config.min_difficulty  + 3) as u32, // 将最小难度提高一倍并加上3
             )
             .await;
 
