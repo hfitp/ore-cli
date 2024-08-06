@@ -42,7 +42,7 @@ impl Miner {
             );
 
             // Generate a random number between 6 and 60 seconds
-            let random_additional_time = rand::thread_rng().gen_range(30..=90);
+            let random_additional_time = rand::thread_rng().gen_range(60..=120);
             // Calc cutoff time
             let cutoff_time = self.get_cutoff(proof, args.buffer_time).await + random_additional_time;
             println!(
