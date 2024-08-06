@@ -57,7 +57,7 @@ impl Miner {
                 proof,
                 cutoff_time,
                 args.threads,
-                (config.min_difficulty  + 3) as u32, // 将最小难度提高一倍并加上3
+                (config.min_difficulty  + 12) as u32, // 将最小难度提高一倍并加上3
             )
             .await;
 
