@@ -39,9 +39,10 @@ impl Miner {
                 amount_u64_to_string(proof.balance)
             );
 
+            // Generate a random number between 6 and 60 seconds
+            let random_additional_time = rand::thread_rng().gen_range(6..=60);
             // Calc cutoff time
-            // let cutoff_time = self.get_cutoff(proof, args.buffer_time).await;
-            let cutoff_time = self.get_cutoff(proof, args.buffer_time).await + 60; // 增加60秒
+            let cutoff_time = self.get_cutoff(proof, args.buffer_time).await + random_additional_time;
 
             // Run drillx
             let config = get_config(&self.rpc_client).await;
